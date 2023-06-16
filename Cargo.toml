@@ -6,8 +6,8 @@ authors = ["Whaledev <whaledev.contact@gmail.com>"]
 license = "MIT"
 description = "A simple multi threaded web directory brute forcing tool."
 readme = "README.md"
-homepage = "https://github.com/you/grrs"
-repository = "https://github.com/you/grrs"
+homepage = "https://github.com/0bject-0bject/wbuster"
+repository = "https://github.com/0bject-0bject/wbuster"
 keywords = ["cli", "simple", "web", "directory", "brute", "force", "tool"]
 categories = ["command-line-utilities"]
 
