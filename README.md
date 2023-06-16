@@ -2,7 +2,7 @@
 
 # Description ❤
 A simple tool for brute forcing web directories! This tool is designed to be used in a penetration testing environment and is not intended for malicious use.
-
+Only supports GET requests and single sweep at the moment.
 Note: This is one of my first Rust projects, so the code is not the best. I am still learning the language and will continue to improve the code as I learn more. This is also a very early version of the tool, so there are still many features that I plan to add 😅
 
 # Screenshots 📸
