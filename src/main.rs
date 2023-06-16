@@ -18,6 +18,8 @@
 
 use std::{path::PathBuf};
 
+use colored::control;
+
 mod read_file;
 mod graphics;
 mod scan;
@@ -31,6 +33,11 @@ pub struct CliArgs {
 }
 
 fn main() {
+    // Enable virtual terminal processing on windows
+    #[cfg(windows)]
+    control::set_virtual_terminal(true).unwrap();
+
+    // Parse the cli arguments
     let cli_args = cli_parser::cli();
 
     // Read the file, and process for directories
