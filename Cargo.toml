@@ -1,0 +1,28 @@
+[package]
+name = "wbuster"
+version = "0.1.0"
+edition = "2021"
+authors = ["Whaledev <whaledev.contact@gmail.com>"]
+license = "MIT"
+description = "A simple multi threaded web directory brute forcing tool."
+readme = "README.md"
+homepage = "https://github.com/you/grrs"
+repository = "https://github.com/you/grrs"
+keywords = ["cli", "simple", "web", "directory", "brute", "force", "tool"]
+categories = ["command-line-utilities"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+colored = { version = "1.9.1" } #The latest version has a error when i try to compile it, you can try it tho!
+reqwest = { version = "0.11", features = ["blocking"] }
+rayon = "1"
+
+[profile.release]
+opt-level = "z"  # Optimize for size.
+lto = true  # Use Link-Time Optimization
+panic = "abort" # Abort on panic
+strip = true # Strip symbols from the binary
