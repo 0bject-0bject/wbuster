@@ -7,8 +7,7 @@ Note: This is one of my first Rust projects, so the code is not the best. I am s
 
 # Screenshots 📸
 
-![Screenshot](
-https://raw.githubusercontent.com/0bject-0bject/wbuster/main/screenshots/wbuster.png)
+![Screenshot](https://github.com/0bject-0bject/wbuster/blob/main/screenshots/wbuster.png)
 
 # Installation 📥
 
