@@ -8,7 +8,7 @@ description = "A simple multi threaded web directory brute forcing tool."
 readme = "README.md"
 homepage = "https://github.com/0bject-0bject/wbuster"
 repository = "https://github.com/0bject-0bject/wbuster"
-keywords = ["cli", "tool", "web", "directory", "brute force"]
+keywords = ["cli", "web", "directory", "brute", "force"]
 categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
