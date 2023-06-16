@@ -1,8 +1,8 @@
 [package]
 name = "wbuster"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
-authors = ["Whaledev <whaledev.contact@gmail.com>"]
+authors = ["[object Object] <whaledev.contact@gmail.com>"]
 license = "MIT"
 description = "A simple multi threaded web directory brute forcing tool."
 readme = "README.md"

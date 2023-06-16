@@ -1,5 +1,5 @@
 /// 
-/// Copyright 2023, Whaledev
+/// Copyright 2023, [object Object]
 /// Licensed under MIT
 ///
 
@@ -30,7 +30,9 @@ pub fn spawn_threads(cli_args: CliArgs, directories: Vec<String>) {
 
         pool.spawn(move || {
             // Sleep for the specified amount of time
-            std::thread::sleep(Duration::from_secs(cli_args.timeout));
+            if cli_args.timeout > 0 {
+                std::thread::sleep(Duration::from_secs(cli_args.timeout));
+            }
 
             let resp = {
                 let resp = client_clone.get(&url).send();

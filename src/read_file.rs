@@ -1,5 +1,5 @@
 /// 
-/// Copyright 2023, Whaledev
+/// Copyright 2023, [object Object]
 /// Licensed under MIT
 ///
 

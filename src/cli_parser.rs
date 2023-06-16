@@ -1,3 +1,8 @@
+/// 
+/// Copyright 2023, [object Object]
+/// Licensed under MIT
+///
+
 use std::path::PathBuf;
 
 use crate::CliArgs;
