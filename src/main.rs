@@ -21,7 +21,6 @@ use std::{path::PathBuf};
 use colored::control;
 
 mod read_file;
-mod graphics;
 mod scan;
 mod cli_parser;
 
@@ -45,9 +44,6 @@ fn main() {
 
     // Clear the screen
     clear_screen();
-
-    // Print the graphic
-    graphics::wscan_graphic(&cli_args.url);
 
     // Start the scan
     scan::spawn_threads(cli_args, directories);

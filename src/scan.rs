@@ -5,12 +5,14 @@
 
 use crate::CliArgs;
 
-use std::{sync::mpsc, time::Duration};
 use colored::Colorize;
+use std::{sync::mpsc, time::Duration};
 use rayon::ThreadPoolBuilder;
 use reqwest::{StatusCode, blocking::Client};
 
 pub fn spawn_threads(cli_args: CliArgs, directories: Vec<String>) {
+    wscan_graphic(&cli_args.url);
+
     // Create a thread pool with the specified number of threads
     let pool = ThreadPoolBuilder::new()
         .num_threads(cli_args.threads as usize)
@@ -63,4 +65,18 @@ pub fn spawn_threads(cli_args: CliArgs, directories: Vec<String>) {
     for (status, url) in rx {
         println!("{}: {}", status.green().bold(), url.green().bold());
     }
+}
+
+// Literally just prints the banner😭
+pub fn wscan_graphic(url: &String) {
+
+    print!("{}", " _       __ ____   __  __ _____ ______ ______ ____ \r\n".bright_blue().bold());
+    print!("{}", "| |     / // __ ) / / / // ___//_  __// ____// __ \\\r\n".bright_blue().bold());
+    print!("{}", "| | /| / // __  |/ / / / \\__ \\  / /  / __/  / /_/ /\r\n".bright_blue().bold());
+    print!("{}", "| |/ |/ // /_/ // /_/ / ___/ / / /  / /___ / _, _/ \r\n".bright_blue().bold());
+    print!("{}", "|__/|__//_____/ \\____/ /____/ /_/  /_____//_/ |_|  \r\n".bright_blue().bold());
+    print!("\r\n");
+
+    print!("{} {}\r\n", "Starting on".cyan().bold(), url.cyan().bold().underline());
+    print!("\r\n");
 }
