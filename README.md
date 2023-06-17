@@ -45,7 +45,7 @@ cargo build --release
 
 # Usage 🧰
 
-This tool works with the dirbuster word lists, and any other word list that is formatted the same way. The tool will automatically remove any comments and blank lines from the word list. The tool will also automatically add a "/" to the end of the URL if it is not already there. <br>
+This tool works with the dirbuster word lists (txt only), and any other word list that is formatted the same way. The tool will automatically remove any comments and blank lines from the word list. The tool will also automatically add a "/" to the end of the URL if it is not already there. <br>
 This tool also works with json files that are formatted like this 
 ```javascript
 {
