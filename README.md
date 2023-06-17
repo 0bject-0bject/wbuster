@@ -26,7 +26,7 @@ cargo install wbuster
 <summary> <strong> From Source </strong> </summary>
 
 ```bash
-git clone https://github.com/0bject-0bject/wbuster
+git clone https://github.com/0bject-0bject/wbuster.git
 ```
 
 ```bash
