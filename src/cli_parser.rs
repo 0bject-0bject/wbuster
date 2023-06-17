@@ -77,6 +77,7 @@ pub fn cli() -> Result<(CliArgs, Vec<String>), &'static str> {
         .unwrap_or(&"0".to_string())
         .parse::<u64>()
         .map_err(|_| "Invalid timeout")?;
+    
     let cli_args = CliArgs {
         path,
         url,
