@@ -16,8 +16,8 @@ struct Directories {
 
 pub fn cli() -> Result<(CliArgs, Vec<String>), &'static str> {
     let matches = Command::new("wbuster")
-        .version("0.1.0")
-        .author("Whaledev <whaledev.contact@gmail.com>")
+        .version("0.1.4")
+        .author("[object Object] <whaledev.contact@gmail.com>")
         .about("A simple directory brute force tool for websites")
         .arg(
             Arg::new("path")
@@ -77,7 +77,7 @@ pub fn cli() -> Result<(CliArgs, Vec<String>), &'static str> {
         .unwrap_or(&"0".to_string())
         .parse::<u64>()
         .map_err(|_| "Invalid timeout")?;
-    
+
     let cli_args = CliArgs {
         path,
         url,
