@@ -10,6 +10,7 @@ use std::{sync::mpsc, time::Duration};
 use rayon::ThreadPoolBuilder;
 use reqwest::{StatusCode, blocking::Client};
 
+
 pub fn spawn_threads(cli_args: CliArgs, directories: Vec<String>) {
     wscan_graphic(&cli_args.url);
 

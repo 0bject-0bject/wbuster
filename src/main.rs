@@ -16,20 +16,13 @@
 /// Simple test express server:
 /// https://github.com/0bject-0bject/Express-Test-Server
 
-use std::{path::PathBuf};
-
-use colored::control;
-
-mod read_file;
 mod scan;
 mod cli_parser;
+mod cli_args;
 
-pub struct CliArgs {
-    path: PathBuf,
-    url: String,
-    threads: u32,
-    timeout: u64
-}
+use std::{process};
+use colored::control;
+use crate::cli_args::CliArgs;
 
 fn main() {
     // Enable virtual terminal processing on windows
@@ -37,21 +30,24 @@ fn main() {
     control::set_virtual_terminal(true).unwrap();
 
     // Parse the cli arguments
-    let cli_args = cli_parser::cli();
-
-    // Read the file, and process for directories
-    let directories = read_file::read(&cli_args.path);
+    let cli_args = match cli_parser::cli() {
+        Ok(cli_args) => cli_args,
+        Err(e) => {
+            eprintln!("{}", e);
+            process::exit(1);
+        }
+    };
 
     // Clear the screen
     clear_screen();
 
     // Start the scan
-    scan::spawn_threads(cli_args, directories);
+    scan::spawn_threads(cli_args.0, cli_args.1);
 
     // Exit the program
-    std::process::exit(0);
+    process::exit(0);
 }
 
-pub fn clear_screen() {
+fn clear_screen() {
     print!("{}[2J{}[1;1H", 27 as char, 27 as char);
 }
