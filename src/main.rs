@@ -38,16 +38,9 @@ fn main() {
         }
     };
 
-    // Clear the screen
-    clear_screen();
-
     // Start the scan
     scan::spawn_threads(cli_args.0, cli_args.1);
 
     // Exit the program
     process::exit(0);
-}
-
-fn clear_screen() {
-    print!("{}[2J{}[1;1H", 27 as char, 27 as char);
 }

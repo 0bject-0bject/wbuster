@@ -2,6 +2,7 @@
 /// Copyright 2023, [object Object]
 /// Licensed under MIT
 ///
+
 use std::{error::Error, path::PathBuf, process};
 
 use clap::{Command, Arg};

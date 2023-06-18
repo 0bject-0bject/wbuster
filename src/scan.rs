@@ -10,7 +10,6 @@ use std::{sync::mpsc, time::Duration};
 use rayon::ThreadPoolBuilder;
 use reqwest::{StatusCode, blocking::Client};
 
-
 pub fn spawn_threads(cli_args: CliArgs, directories: Vec<String>) {
     wscan_graphic(&cli_args.url);
 
@@ -69,7 +68,9 @@ pub fn spawn_threads(cli_args: CliArgs, directories: Vec<String>) {
 }
 
 // Literally just prints the banner😭
-pub fn wscan_graphic(url: &String) {
+fn wscan_graphic(url: &String) {
+    // Clear the screen and move the cursor to the top left
+    print!("{}[2J{}[1;1H", 27 as char, 27 as char);
 
     print!("{}", " _       __ ____   __  __ _____ ______ ______ ____ \r\n".bright_blue().bold());
     print!("{}", "| |     / // __ ) / / / // ___//_  __// ____// __ \\\r\n".bright_blue().bold());
