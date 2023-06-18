@@ -96,7 +96,7 @@ pub fn cli() -> Result<(CliArgs, Vec<String>), &'static str> {
     Ok((cli_args, directories))
 }
 
-pub fn read(path: &PathBuf) -> Result<Vec<String>, Box<dyn Error>> {
+fn read(path: &PathBuf) -> Result<Vec<String>, Box<dyn Error>> {
     let extension = path.extension().ok_or("File has no extension")?;
 
     let data = std::fs::read_to_string(path)?;
@@ -108,10 +108,11 @@ pub fn read(path: &PathBuf) -> Result<Vec<String>, Box<dyn Error>> {
             formatted_data.directories
         }
         Some("txt") => {
+            //
             let directories: Vec<String> = data
-                .lines()
-                .filter(|s| !s.starts_with('#'))
-                .map(|s| s.replace("\r", ""))
+                .lines() // Split the data into lines
+                .filter(|s| !s.starts_with('#')) // Ignore comments
+                .map(|s| s.replace("\r", "")) // Remove carriage returns
                 .collect();
             directories
         }
